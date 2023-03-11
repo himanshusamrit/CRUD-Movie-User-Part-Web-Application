@@ -1,0 +1,169 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.movies{
+    width: 100%;
+    padding: 50px;
+    background-color: #5a5a5a;
+    display: flex;
+    flex-direction: column;
+    /* column-gap: 10px; */
+    row-gap: 20px;
+}
+.movies_header_title{
+    font-size: 30px;
+    font-family: segoe UI;
+    font-weight: 600;
+    color: white;
+}
+
+.all_movies{
+   
+    /* background-color: yellow; */
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap:2.5%;
+    row-gap: 20px;
+}
+
+
+/* css for cards  */
+
+.card{
+    background-color: rgb(249, 20, 20);
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    /* flex-wrap: wrap; */
+}
+
+.card:hover{
+    box-shadow: 0 0 13px #afafaf;
+}
+
+.img_container{
+    width:100%;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    /* background-color: yellow; */
+}
+
+.content{
+    background-color: rgb(39, 38, 38);
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-family: segoe UI;
+    font-weight: 400;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+
+}
+
+.content>h2{
+    font-size: 24px;
+    font-weight: 400;
+
+}
+
+
+.info_container{
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    align-items: flex-start;
+    /* row-gap: 20px; */
+}
+
+.rating{
+    display: flex;
+    align-items: flex-start;
+    /* flex-direction: column; */
+    width: 100%;
+    column-gap: 13px;
+}
+
+.rating>h3{
+    font-size: 15px;
+    font-weight: 400;
+    /* margin-top: 15px; */
+    /* column-gap: 5px; */
+}
+
+.rating_star{
+    position: relative;
+    height: 18px;
+    width: 73px;
+    /* background-color: green; */
+}
+
+.whitestars,.yellowstars{
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+.yellowstars  i{
+    color: gold;
+}
+i{
+    font-size: 13px;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    color: #424242;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top:20px ;
+}
+
+img{
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+/* css for a modal */
+
+.modal{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.modal_child{
+    padding: 30px;
+    /* height: 200px; */
+    width: 20%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.rate_star{
+    color: rgb(195, 195, 195);
+    font-size: 25px;
+    cursor: pointer;
+}
+.rate_star:hover{
+    color: gold;
+    transition: .5s;
+}

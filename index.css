@@ -1,0 +1,327 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.header {
+  padding: 10px 5%;
+  background-color: lightgray;
+  display: flex;
+}
+.logo {
+  height: 70px;
+  width: 17%;
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: segoe UI;
+}
+
+.data {
+  padding: 10px 5%;
+  /* background-color: yellowgreen; */
+  display: flex;
+  flex-direction: column;
+}
+.data-header {
+  height: 60px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: segoe UI;
+}
+.data-header > h1 {
+  font-size: 30px;
+  font-weight: 400;
+}
+ button {
+  padding: 10px 20px;
+  font-family: segoe UI;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #44913dc9;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+button:hover {
+  background-color: #1b5f14c9;
+}
+button:active {
+  background-color: #44913dc9;
+}
+.data-table {
+  padding: 10px 0%;
+  width: 100%;
+  /* background-color: lightgray; */
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  font-family: segoe UI;
+}
+table th {
+  font-size: 24px;
+  font-weight: 400;
+  background-color: #44913dc9;
+  color: white;
+}
+td,th {
+  padding: 16px 0px;
+}
+table,
+td,
+th {
+  border: 2px solid white;
+  border-collapse: collapse;
+}
+tbody tr:nth-child(even) {
+  background-color: #f8f7f7;
+}
+td {
+  text-indent: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+i {
+  cursor: pointer;
+  /* transition: .3s; */
+}
+i:hover{
+    transform: scale(1.3);
+}
+.fa-eye {
+  color: rgb(35, 61, 204);
+}
+.fa-pen-to-square {
+  color: green;
+}
+.fa-trash {
+  color: rgb(241, 90, 90);
+}
+
+
+/* ---------------------- css for view modal ---------------------   */
+
+.view_modal,.add_modal,.update_modal
+{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.movie_details{
+    height: 80vh;
+    width: 80%;
+    background-color: white;
+    padding: 30px;
+    font-family: segoe UI;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.cross{
+    position: absolute;
+    top: -10px;
+    right: 0px;
+    font-size: 30px;
+    color: rgb(235, 61, 61);
+    
+}
+.details{
+    width: 100%;
+    /* background-color: red; */
+    margin-top: 30px;
+    display: flex;
+}
+.poster{
+    min-height: 60vh;
+    width: 25%;
+    /* background-color: green; */
+}
+.image{
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+
+}
+.genre{
+    width: 100%;
+    height: 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.image > img{
+    width: 100%;
+    cursor: pointer;
+    transition: .6s;
+}
+.image > img:hover{
+    transform: scale(1.2);
+}
+
+.movie_content{
+    min-height: 60vh;
+    width: 75%;
+    /* background-color: yellow; */
+    padding:0px 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.rating{
+    height: 100px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    column-gap: 50px;
+    margin-top: 20px;
+}
+
+
+/* ------------------- css for add modal ----------------------------------  */
+
+
+
+.modal_child{
+    width: 50%;
+    /* height: 60vh; */
+    background-color: white;
+    padding: 30px;
+    font-family: segoe UI;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    position: relative;
+}
+
+
+.check{
+  width: 100%;
+}
+
+.modal_title{
+    color: #5b5555;
+}
+
+.form{
+    width: 100%;
+    padding: 20px;
+    /* background-color: red; */
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2%;
+    row-gap: 10px;
+    font-size: 16px;
+}
+.inp{
+    width: 49%;
+    text-indent: 20px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #5b5555;
+    height: 40px;
+}
+.big_inp{
+    width: 100%;
+    padding: 10px;
+    height: 150px;
+    font-size: 16px;
+}
+.url{
+    width: 100%;
+}
+
+
+
+
+/* ------------------------- css for pagination -------------------  */
+
+.pagination{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+.page_controls{
+  width: 60%;
+  /* background-color:red; */
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+
+}
+.page_number{
+  width: 30%;
+  /* outline: none; */
+}
+.page_details{
+  width: 10%;
+  /* background-color:yellow; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 20px;
+  font-family: segoe UI;
+}
+
+
+a{
+  padding: 10px;
+  font-family: segoe UI;
+  cursor: pointer;
+}
+
+a:hover{
+  background-color:  lightgray;
+}
+
+
+
+/* css for toastmessagess================== */
+
+.message{
+  
+  width: 20%;
+  padding: 20px;
+  background-color: #973112;
+  position: fixed;
+  bottom: 20px;
+  right: -20%;
+  font-family: segoe UI;
+  font-weight: 500;
+  font-size: 25px;
+  color: white;
+  transition: .4s;
+  /* border-radius: 10px; */
+}
+
+
+.blocked{
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  margin-left: 205px;
+}

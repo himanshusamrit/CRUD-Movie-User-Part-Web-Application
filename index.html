@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CRUD</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    <!-- html for view modal -----------------------------------------  -->
+
+    <div class="view_modal" id="view_modal" onclick="closeModal('view_modal',event.target.id)">
+        <div class="movie_details">
+
+            <div class="cross">
+                <i onclick="closeModal('view_modal',true)" class="fa-solid fa-xmark"></i>
+
+            </div>
+            <h1 id="title">The Shawshant Redemption</h1>
+
+            <div class="details">
+
+                <div class="poster">
+
+                    <div class="image">
+                        <img id="poster"
+                            src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ4MzQzMzM2Nl5BMl5BanBnXkFtZTgwMTQ1NzU3MDI@._V1_SY500_CR0,0,356,500_AL_.jpg"
+                            alt="">
+
+                    </div>
+
+                    <div class="genre">
+                        <p id="genre">Inspiring . Drama</p>
+                    </div>
+
+                </div>
+
+                <div class="movie_content">
+
+                    <div>
+                        <h2>Storyline</h2>
+                        <p id="storyline" class="storyline">
+                            pleasure from his
+                            remaining lifespan as is possible. Dr. Bhaskar his physician tends to Anand in his last
+                            days. After Anand dies we can however still hear his voice which was recorded on a tape. Dr
+                            Bhakser writes a book on his patient and wins a literary prize for it
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2>Actors</h2>
+                        <p class="actors" id="actors">
+                            Hritik Roshan. Farhan Aktar
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2>Release date</h2>
+                        <p class="releasedate" id="releasedate">
+                            25 dec 2000
+                        </p>
+
+                    </div>
+
+                    <div>
+                        <h2>Duration</h2>
+                        <p class="duration" id="duration"> 130 mins</p>
+                    </div>
+
+                    <div>
+                        <h2>Ratings</h2>
+                        <div class="rating">
+                            <div>
+                                <h3>IMDB</h3>
+                                <p id="imdbrating">8.6</p>
+                            </div>
+
+                            <div>
+                                <h3>Average Rating</h3>
+                                <p>7.9</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ----------- coding for add modal ------------------------------------------  -->
+
+    <div class="add_modal" id="add_modal" onclick="closeModal('add_modal',event.target.id)"> 
+
+        <div class="modal_child">
+
+            <div class="cross">
+                <i onclick="closeModal('add_modal',true)" class="fa-solid fa-xmark"></i>
+
+            </div>
+
+
+            <h1 class="modal_title">Add New Movie</h1>
+            <form id="add_form">
+                <div class="form">
+
+                    <input type="text" placeholder="Enter Title" class="inp" id="add_title">
+                    <input type="text" placeholder="Enter Geners Seprated by , " class="inp" id="add_geners">
+                    <input type="number" placeholder="Enter Duration" class="inp" id="add_duration">
+                    <input type="text" placeholder="Enter Release date" class="inp" id="add_releasedate"
+                        onfocus="textToDate()">
+                    <input type="text" placeholder="Enter Actors seperated by ," class="inp" id="add_actors">
+                    <input type="text" placeholder="Enter IMBD rating" class="inp" id="add_imdbrating">
+                    <input type="url" placeholder="Poster URL" class="inp url" id="add_url">
+                    <textarea placeholder="Enter Storyline" class="big_inp inp" id="add_storyline"></textarea>
+
+                    
+                    <button type="button" class="btn" onclick="createMovie()">Create Movie</button>
+
+
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+
+    <!-- ----------------- update modal section ------------------------  -->
+
+    <div class="update_modal" id="update_modal" onclick="closeModal('update_modal',event.target.id)">
+
+        <div class="modal_child">
+
+            <div class="cross">
+                <i onclick="closeModal('update_modal',true)" class="fa-solid fa-xmark"></i>
+
+            </div>
+
+
+            <h1 class="modal_title">Edit Movie</h1>
+            <form id="add_form">
+                <div class="form">
+
+                    <input type="text" placeholder="Enter Title" class="inp" id="update_title">
+                    <input type="text" placeholder="Enter Geners Seprated by , " class="inp" id="update_geners">
+                    <input type="number" placeholder="Enter Duration" class="inp" id="update_duration">
+                    <input type="text" placeholder="Enter Release date" class="inp" id="update_releasedate"
+                        onfocus="textToDate()">
+                    <input type="text" placeholder="Enter Actors seperated by ," class="inp" id="update_actors">
+                    <input type="text" placeholder="Enter IMBD rating" class="inp" id="update_imdbrating">
+                    <input type="url" placeholder="Poster URL" class="inp url" id="update_url">
+                    <textarea placeholder="Enter Storyline" class="big_inp inp" id="update_storyline"></textarea>
+
+                    <p class="check">
+                        Blocked <input type="checkbox" id="update_blocked" >
+                    </p>
+                    <button type="button" onclick="updateMovie()">Update Movie</button>
+
+
+
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- -------------------  original data section -------------------------->
+
+    <section class="data">
+
+        <div class="data-header">
+            <h1>All Movies</h1>
+            <button onclick="openAddModal()">Add more Movies</button>
+
+        </div>
+
+        <div class="data-table">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Release</th>
+                        <th>Genes</th>
+                        <th>Duration</th>
+                        <th>IMBD rating</th>
+                        <!-- <th>Content Rating</th> -->
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="movies">
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="pagination">
+            <div class="page_controls">
+                <button onclick="prevPage()">
+                    <i class="fa-solid fa-angles-left"></i>
+                    Prev
+                </button>
+
+                <div class="pages" id="pages">
+
+
+                </div>
+
+                <button onclick="nextPage()">
+                    Next
+                    <i class="fa-solid fa-angles-right"></i>
+                </button>
+
+                <input class="inp page_number" type="number" placeholder="Enter Page Number" onkeyup="openPage(this.value)" id="page_number" >
+            </div>
+
+            <div class="page_details">
+                   <p>Page <span id="current_page" >1</span> of <span id="totalPages" >0</span> </p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- section to display toastmessage -->
+    <section class="messageToDis" id="messageToDis">
+        <div class="message" id="message">
+          
+
+        </div>
+
+    </section>
+
+
+
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
